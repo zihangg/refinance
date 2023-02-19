@@ -4,7 +4,7 @@ import Config from "./Config/Config"
 import Accounts from "./Accounts/Accounts"
 import Duration from "./Duration/Duration"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
-import { Account, Priority } from "../types"
+import { Account, Priority } from "../../../types"
 
 function Main() {
     // centralized states
@@ -63,7 +63,7 @@ function Main() {
         },
     ])
 
-    const [totalMonths, setTotalMonths] = useState<number>(0);
+    const [totalMonths, setTotalMonths] = useState<number>(0)
 
     return (
         <div className="flex flex-col py-10">
@@ -85,7 +85,7 @@ function Main() {
                 investments={investments}
                 setInvestments={setInvestments}
             />
-            <Duration setTotalMonths={setTotalMonths}/>
+            <Duration setTotalMonths={setTotalMonths} />
             <div className="flex justify-center align-center py-10">
                 <button className="bg-secondary rounded-2xl font-inter font-black px-5 py-5 text-primary w-48 h-16 text-center hover:bg-opacity-70 flex justify-center gap-x-2">
                     GET REPORT <ArrowForwardIcon />

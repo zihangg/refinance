@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Account, Priority } from "../../types"
+import { Account, Priority } from "../../../../types"
 import AccountRow from "./AccountRow"
 
 type Props = {

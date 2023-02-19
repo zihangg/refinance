@@ -1,8 +1,7 @@
 import React from "react"
 import "./App.css"
-import Header from "./Header/Header"
-import Main from "./Main/Main"
-
+import Header from "./components/header/Header"
+import Main from "./components/pages/Main/Main"
 
 function App() {
     return (
