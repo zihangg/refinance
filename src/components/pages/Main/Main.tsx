@@ -5,6 +5,7 @@ import Accounts from "./Accounts/Accounts"
 import Duration from "./Duration/Duration"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
 import { Account, Priority } from "../../../types"
+import { useNavigate } from "react-router-dom"
 
 function Main() {
     // centralized states
@@ -65,6 +66,9 @@ function Main() {
 
     const [totalMonths, setTotalMonths] = useState<number>(0)
 
+    // navigation
+    const navigate = useNavigate()
+
     return (
         <div className="flex flex-col py-10">
             <Salary setSalary={setSalary} />
@@ -87,7 +91,10 @@ function Main() {
             />
             <Duration setTotalMonths={setTotalMonths} />
             <div className="flex justify-center align-center py-10">
-                <button className="bg-secondary rounded-2xl font-inter font-black px-5 py-5 text-primary w-48 h-16 text-center hover:bg-opacity-70 flex justify-center gap-x-2">
+                <button
+                    className="bg-secondary rounded-2xl font-inter font-black px-5 py-5 text-primary w-48 h-16 text-center hover:bg-opacity-70 flex justify-center gap-x-2"
+                    onClick={() => navigate("report")}
+                >
                     GET REPORT <ArrowForwardIcon />
                 </button>
             </div>
