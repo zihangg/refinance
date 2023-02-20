@@ -57,7 +57,7 @@ const calculateCategory = (
     let categoryData: ChartData[] = []
 
     for (let i = 0; i <= totalMonths; i++) {
-        if (i == 0) {
+        if (i === 0) {
             categoryData[i] = { month: i, ...currMonthValues }
             continue
         } else {
@@ -115,7 +115,7 @@ const calculateMonthlyValues = (
                 accountRemainder = newCurrValue - account.goal!
                 remainderFromAccount = accountRemainder
                 account.completed = true
-            } else if (newCurrValue == account.goal!) {
+            } else if (newCurrValue === account.goal!) {
                 account.completed = true
             }
             currMonthValues[account.name!] +=

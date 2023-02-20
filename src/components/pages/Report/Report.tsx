@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useLocation } from "react-router-dom"
 import { Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts"
 import { ChartData } from "../../../helpers/types"
@@ -73,9 +73,6 @@ function Report() {
     }
 
     const generateTable = (data: ChartData[]) => {
-        const keys = Object.keys(data[0])
-
-        data.forEach((row) => console.log(row))
         return (
             <div className={styles.table}>
                 {/* <div style={{ width: 400, height: 500, overflow: "auto" }}> */}
