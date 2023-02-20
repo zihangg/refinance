@@ -14,7 +14,7 @@ export enum Priority {
 }
 
 export type ChartData = {
-    month: number,
+    month: number
     [key: string]: number // account datas on that month
 }
 

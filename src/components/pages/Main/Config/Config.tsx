@@ -18,9 +18,24 @@ function Config({ sav, setSav, exp, setExp, inv, setInv, salary }: Props) {
                 CONFIG
             </div>
             <div className="flex flex-col w-4/5 bg-secondary rounded-3xl">
-                <SliderSection title={"SAV"} value={sav} setValue={setSav} salary={salary}/>
-                <SliderSection title={"EXP"} value={exp} setValue={setExp} salary={salary}/>
-                <SliderSection title={"INV"} value={inv} setValue={setInv} salary={salary}/>
+                <SliderSection
+                    title={"SAV"}
+                    value={sav}
+                    setValue={setSav}
+                    salary={salary}
+                />
+                <SliderSection
+                    title={"EXP"}
+                    value={exp}
+                    setValue={setExp}
+                    salary={salary}
+                />
+                <SliderSection
+                    title={"INV"}
+                    value={inv}
+                    setValue={setInv}
+                    salary={salary}
+                />
             </div>
         </div>
     )

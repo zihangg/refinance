@@ -48,7 +48,7 @@ function SliderSection({ title, value, setValue, salary }: Props) {
         },
     }
 
-    const sliderSalary = salary * value / 100; 
+    const sliderSalary = (salary * value) / 100
 
     const handleSliderChange = (event: Event, newValue: number | number[]) => {
         setValue(newValue)
@@ -86,7 +86,11 @@ function SliderSection({ title, value, setValue, salary }: Props) {
                     sx={style}
                 />
             </Box>
-            <input className="w-40 rounded-2xl bg-primary font-inter font-black text-secondary text-center px-5 py-5" value={sliderSalary} disabled={true}/>
+            <input
+                className="w-40 rounded-2xl bg-primary font-inter font-black text-secondary text-center px-5 py-5"
+                value={sliderSalary}
+                disabled={true}
+            />
         </div>
     )
 }

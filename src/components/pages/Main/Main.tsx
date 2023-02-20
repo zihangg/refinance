@@ -81,7 +81,7 @@ function Main() {
             investments,
             totalMonths
         )
-        navigate("report", { state: {data} })
+        navigate("report", { state: { data } })
     }
 
     return (

@@ -10,8 +10,8 @@ function App() {
         <div className="w-full bg-primary h-full">
             <Header />
             <Routes>
-                <Route path="/" element={ <Main />} />
-                <Route path="/report" element={ <Report />} />
+                <Route path="/" element={<Main />} />
+                <Route path="/report" element={<Report />} />
             </Routes>
         </div>
     )

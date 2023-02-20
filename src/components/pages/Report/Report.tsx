@@ -75,34 +75,34 @@ function Report() {
     const generateTable = (data: ChartData[]) => {
         return (
             <div className={styles.table}>
-                    <TableContainer component={Paper}>
-                        <Table>
-                            <TableHead>
-                                <TableRow>
-                                    {Object.keys(data[0]).map((key) => (
-                                        <TableCell
-                                            key={key}
-                                            align="center"
-                                            style={{ fontWeight: "bold" }}
-                                        >
-                                            {key.toUpperCase()}
+                <TableContainer component={Paper}>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                {Object.keys(data[0]).map((key) => (
+                                    <TableCell
+                                        key={key}
+                                        align="center"
+                                        style={{ fontWeight: "bold" }}
+                                    >
+                                        {key.toUpperCase()}
+                                    </TableCell>
+                                ))}
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {data.map((row) => (
+                                <TableRow key={row.month}>
+                                    {Object.keys(row).map((key) => (
+                                        <TableCell key={key} align="center">
+                                            {row[key]}
                                         </TableCell>
                                     ))}
                                 </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {data.map((row) => (
-                                    <TableRow key={row.month}>
-                                        {Object.keys(row).map((key) => (
-                                            <TableCell key={key} align="center">
-                                                {row[key]}
-                                            </TableCell>
-                                        ))}
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
             </div>
         )
     }

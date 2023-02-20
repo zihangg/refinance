@@ -55,7 +55,11 @@ function AccountRow({ account, setTempAccount, index, setAccIndex }: props) {
             >
                 {Priority[priority]}
             </button>
-            <PriorityModal open={open} handleClose={handleClose} setPriority={setPriority}/>
+            <PriorityModal
+                open={open}
+                handleClose={handleClose}
+                setPriority={setPriority}
+            />
         </div>
     )
 }
