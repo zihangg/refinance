@@ -75,7 +75,6 @@ function Report() {
     const generateTable = (data: ChartData[]) => {
         return (
             <div className={styles.table}>
-                {/* <div style={{ width: 400, height: 500, overflow: "auto" }}> */}
                     <TableContainer component={Paper}>
                         <Table>
                             <TableHead>
@@ -104,7 +103,6 @@ function Report() {
                             </TableBody>
                         </Table>
                     </TableContainer>
-                {/* </div> */}
             </div>
         )
     }
