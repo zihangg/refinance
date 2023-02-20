@@ -1,15 +1,27 @@
-import React from "react"
-import { Account } from "../../../../helpers/types"
+import React, { useEffect, useState } from "react"
+import { Account, Priority } from "../../../../helpers/types"
+import PriorityModal from "./PriorityModal"
 
 function AccountRow({ account, setTempAccount, index, setAccIndex }: props) {
+    const [open, setOpen] = useState(false)
+
+    const handleOpen = () => setOpen(true)
+    const handleClose = () => setOpen(false)
+
     let { name, current, goal, priority } = account
 
-    const handleChange = (value: string | number, param: string) => {
+    const [currentPriority, setPriority] = useState<Priority>(priority)
+
+    const handleChange = (value: string | number | Priority, param: string) => {
         const newAccount: Account = { ...account, [param]: value }
         console.log(newAccount)
         setTempAccount(newAccount)
         setAccIndex(index)
     }
+
+    useEffect(() => {
+        handleChange(currentPriority, "priority")
+    }, [currentPriority])
 
     return (
         <div className="flex justify-center w-4/5 items-center py-5 gap-x-10">
@@ -37,9 +49,13 @@ function AccountRow({ account, setTempAccount, index, setAccIndex }: props) {
                     handleChange(parseInt(e.target.value), "goal")
                 }}
             />
-            <div className="bg-secondary rounded-2xl font-inter font-black px-5 py-5 text-primary w-48 h-16">
-                {priority}
-            </div>
+            <button
+                className="bg-secondary rounded-2xl font-inter font-black px-5 py-5 text-primary w-48 h-16 hover:opacity-80"
+                onClick={handleOpen}
+            >
+                {Priority[priority]}
+            </button>
+            <PriorityModal open={open} handleClose={handleClose} setPriority={setPriority}/>
         </div>
     )
 }
