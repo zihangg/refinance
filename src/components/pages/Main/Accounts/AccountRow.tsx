@@ -1,12 +1,12 @@
 import React from "react"
-import { Account } from "../../types"
+import { Account } from "../../../../helpers/types"
 
 function AccountRow({ account, setTempAccount, index, setAccIndex }: props) {
     let { name, current, goal, priority } = account
 
     const handleChange = (value: string | number, param: string) => {
         const newAccount: Account = { ...account, [param]: value }
-        console.log(newAccount);
+        console.log(newAccount)
         setTempAccount(newAccount)
         setAccIndex(index)
     }

@@ -4,14 +4,16 @@ import Config from "./Config/Config"
 import Accounts from "./Accounts/Accounts"
 import Duration from "./Duration/Duration"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
-import { Account, Priority } from "../types"
+import { Account, Priority } from "../../../helpers/types"
+import { useNavigate } from "react-router-dom"
+import { buildData } from "../../../helpers/data"
 
 function Main() {
     // centralized states
     const [salary, setSalary] = useState<number>(0)
-    const [sav, setSav] = React.useState<any>(30)
-    const [exp, setExp] = React.useState<any>(30)
-    const [inv, setInv] = React.useState<any>(30)
+    const [sav, setSav] = React.useState<number>(30)
+    const [exp, setExp] = React.useState<number>(30)
+    const [inv, setInv] = React.useState<number>(30)
     const [savings, setSavings] = useState<Account[]>([
         {
             name: "MAYBANK",
@@ -53,7 +55,7 @@ function Main() {
             name: "UNIT TRUST",
             current: 2000,
             goal: 2000,
-            priority: Priority.LOW,
+            priority: Priority.MEDIUM,
         },
         {
             name: "CRYPTO",
@@ -63,7 +65,24 @@ function Main() {
         },
     ])
 
-    const [totalMonths, setTotalMonths] = useState<number>(0);
+    const [totalMonths, setTotalMonths] = useState<number>(0)
+
+    // navigation
+    const navigate = useNavigate()
+
+    const generateReport = () => {
+        const data = buildData(
+            salary,
+            sav,
+            exp,
+            inv,
+            savings,
+            expenses,
+            investments,
+            totalMonths
+        )
+        navigate("report", { state: {data} })
+    }
 
     return (
         <div className="flex flex-col py-10">
@@ -85,9 +104,12 @@ function Main() {
                 investments={investments}
                 setInvestments={setInvestments}
             />
-            <Duration setTotalMonths={setTotalMonths}/>
+            <Duration setTotalMonths={setTotalMonths} />
             <div className="flex justify-center align-center py-10">
-                <button className="bg-secondary rounded-2xl font-inter font-black px-5 py-5 text-primary w-48 h-16 text-center hover:bg-opacity-70 flex justify-center gap-x-2">
+                <button
+                    className="bg-secondary rounded-2xl font-inter font-black px-5 py-5 text-primary w-48 h-16 text-center hover:bg-opacity-70 flex justify-center gap-x-2"
+                    onClick={generateReport}
+                >
                     GET REPORT <ArrowForwardIcon />
                 </button>
             </div>

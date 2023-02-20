@@ -1,5 +1,5 @@
 import React from "react"
-import { Account } from "../../types"
+import { Account } from "../../../../helpers/types"
 import AccountGroup from "./AccountGroup"
 
 type Props = {
