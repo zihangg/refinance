@@ -1,6 +1,6 @@
 import { Modal, Box, Typography } from "@mui/material"
 import React from "react"
-import { Priority } from "../../../../helpers/types"
+import { Priority } from "../../helpers/types"
 
 type Props = {
     open: boolean

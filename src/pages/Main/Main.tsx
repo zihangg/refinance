@@ -1,12 +1,12 @@
 import React, { useState } from "react"
-import Salary from "./Salary/Salary"
-import Config from "./Config/Config"
-import Accounts from "./Accounts/Accounts"
-import Duration from "./Duration/Duration"
+import Salary from "../../components/Salary/Salary"
+import Config from "../../components/Config/Config"
+import Accounts from "../../components/Accounts/Accounts"
+import Duration from "../../components/Duration/Duration"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
-import { Account, Priority } from "../../../helpers/types"
+import { Account, Priority } from "../../helpers/types"
 import { useNavigate } from "react-router-dom"
-import { buildData } from "../../../helpers/data"
+import { buildData } from "../../helpers/data"
 
 function Main() {
     // centralized states

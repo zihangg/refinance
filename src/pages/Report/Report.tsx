@@ -1,8 +1,8 @@
 import React from "react"
 import { useLocation } from "react-router-dom"
 import { Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts"
-import { ChartData } from "../../../helpers/types"
-import { chartLineColors } from "../../../helpers/chart"
+import { ChartData } from "../../helpers/types"
+import { chartLineColors } from "../../helpers/chart"
 import {
     Paper,
     Table,

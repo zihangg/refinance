@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Account, Priority } from "../../../../helpers/types"
+import { Account, Priority } from "../../helpers/types"
 import PriorityModal from "./PriorityModal"
 
 function AccountRow({ account, setTempAccount, index, setAccIndex }: props) {

@@ -1,9 +1,9 @@
 import React from "react"
 import "./App.css"
-import Header from "./components/header/Header"
-import Main from "./components/pages/Main/Main"
+import Header from "./components/Header/Header"
+import Main from "./pages/Main/Main"
 import { Route, Routes } from "react-router-dom"
-import Report from "./components/pages/Report/Report"
+import Report from "./pages/Report/Report"
 
 function App() {
     return (
